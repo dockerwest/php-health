@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+use Adoy\FastCGI\Client;
+
+$script = '/ping';
+$client = new Client('127.0.0.1', '9000');
+$params = array(
+		'GATEWAY_INTERFACE' => 'FastCGI/1.0',
+		'REQUEST_METHOD'    => 'GET',
+		'SCRIPT_FILENAME'   => $script,
+		'SCRIPT_NAME'       => $script,
+		'QUERY_STRING'      => null,
+		'REQUEST_URI'       => $script,
+		'DOCUMENT_URI'      => $script,
+		'SERVER_SOFTWARE'   => 'php/fcgiclient',
+		'REMOTE_ADDR'       => '127.0.0.1',
+		'REMOTE_PORT'       => '9985',
+		'SERVER_ADDR'       => '127.0.0.1',
+		'SERVER_PORT'       => '80',
+		'SERVER_NAME'       => php_uname('n'),
+		'SERVER_PROTOCOL'   => 'HTTP/1.1',
+		'CONTENT_TYPE'      => '',
+		'CONTENT_LENGTH'    => 0
+);
+try {
+    $response = $client->request($params, false)."\n";
+    if (stristr($response, 'pong')) {
+        exit(0);
+    }
+    exit(2);
+} catch(Exception $e) {
+    exit(1);
+}
