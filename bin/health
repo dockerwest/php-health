@@ -1,7 +1,14 @@
 #!/usr/bin/env php
 <?php
 
-require_once(__DIR__ . '/../vendor/autoload.php');
+// plain composer install
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require_once(__DIR__ . '/../vendor/autoload.php');
+}
+// built in phar
+elseif (file_exists(__DIR__ . '/../vendor/adoy/fastcgi-client/src/Adoy/FastCGI/Client.php')) {
+    require_once(__DIR__ . '/../vendor/adoy/fastcgi-client/src/Adoy/FastCGI/Client.php');
+}
 
 use Adoy\FastCGI\Client;
 
