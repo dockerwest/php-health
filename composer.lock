@@ -1,23 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "534e6d2060e7bf77e063d99353ce8413",
     "packages": [
         {
             "name": "adoy/fastcgi-client",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adoy/PHP-FastCGI-Client.git",
-                "reference": "ae8234f0781b6d97e909e45d8a425b9f9bd120bb"
+                "reference": "6d9a552f0206a1db7feb442824540aa6c55e5b27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adoy/PHP-FastCGI-Client/zipball/ae8234f0781b6d97e909e45d8a425b9f9bd120bb",
-                "reference": "ae8234f0781b6d97e909e45d8a425b9f9bd120bb",
+                "url": "https://api.github.com/repos/adoy/PHP-FastCGI-Client/zipball/6d9a552f0206a1db7feb442824540aa6c55e5b27",
+                "reference": "6d9a552f0206a1db7feb442824540aa6c55e5b27",
                 "shasum": ""
             },
             "type": "library",
@@ -36,11 +36,12 @@
                     "email": "pierrick@adoy.net"
                 }
             ],
-            "description": "Client for communication with a FastCGI (FCGI) application using the FastCGI protocol.",
+            "description": "Lightweight, single file FastCGI client for PHP.",
             "keywords": [
-                "fastcgi"
+                "fastcgi",
+                "fcgi"
             ],
-            "time": "2015-05-20T15:36:05+00:00"
+            "time": "2019-12-11T13:49:21+00:00"
         }
     ],
     "packages-dev": [],
@@ -50,5 +51,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
