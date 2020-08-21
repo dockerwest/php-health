@@ -1,0 +1,21 @@
+{
+    "files": [
+        "vendor/autoload.php"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["Tests"],
+            "in": "vendor/adoy"
+        },
+        {
+            "name": "*.php",
+            "exclude": ["Tests"],
+            "in": "vendor/composer"
+        }
+    ],
+    "main": "bin/health",
+    "output": "php-health.phar",
+    "chmod": "0755",
+    "stub": true
+}
